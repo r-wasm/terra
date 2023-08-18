@@ -401,7 +401,9 @@ void gdal_init(std::string projpath, std::string datapath) {
  #endif
 #endif
 #ifdef PROJ_71
+#ifndef __EMSCRIPTEN__
 	proj_context_set_enable_network(PJ_DEFAULT_CTX, 1);
+#endif //__EMSCRIPTEN__
 #endif
 }
 
